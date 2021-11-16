@@ -1,0 +1,8 @@
+Actually ignored the scheduling part of the task - while python does have its schedulers, adding one to the script to run itself is a bit of an overkill
+So why bother when cron exists? Adding the script to the crontab with 0 * * * * will do the trick perfectly fine ;)
+^ inbefore windows :C
+^ fine then, the script can be put into while True loop with time.sleep() call which will do what's asked while the script is running
+
+For the task itself, I'm using a small json file to store the last 2 saved strips since the order matters (if the max downloaded images is 2, we should rotate so the oldest got overriden). It's possible to avoid using any external configs altogether if filenames included timestamps, but then it would complicate things a bit with scanning/removing files, so I decided not to bother. If the json file does not exist, it will be created after the script runs
+
+For the scraping part, I'm just getting archive page which contains all available strips, and then choose one at random which is not present in the already saved 2 (if they exist). Then I grab the chosen page which contains a link to the image itself, which I save locally.

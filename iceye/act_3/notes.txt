@@ -1,0 +1,7 @@
+Okay, this one's a basic django project with a single simple view. Check out the magnificent cat when db's empty.
+
+Spent quite a bit time on the most primitive frontend there can possibly be. Yay, I can do accordions now. I'll cross that one off the fullstack requirements list
+Since it was known from the start that there won't be anything slick-looking in the end, I wanted to go all-in on dorky side and make some terrible monster from the 2000s, but even that was taking significantly longer than expected so had to be abandoned. Cursed MVPs and the time constraints! I could have at least added mad background flashing every few seconds, but then I'd need epilepsy warnings. Ugh.
+The second colossal timesink was tinkering with dockerized database - this one was new to me, since I'm used to working with local postgres locally and on staging or production databases live separately from the services and lie outside of developers' jurisdiction. So much effort spent on attempting to pre-fill database from the dump as part of the docker-compose process, linking the dump to the docker-entrypoint-initdb.d was the most promising attempt, but nope, postgres didn't quite like that. So: docker exec -i act_3-db-1 psql -U ahoy -v -d act_3 < example.sql - please let me know if you know how to automate it in compose.
+
+Looking back on it, that time would have been better spent on additionally setting up gunicorn and nginx, but oh well, hindsight.

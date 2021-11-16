@@ -1,0 +1,56 @@
+{% load static %}
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1">
+  <meta name="theme-color" content="#855ca6">
+  <title>isavedtheworldbyrebootingthecomputer</title>
+  <link rel="shortcut icon" href="/static/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">I HAVE SAVED LOTS OF THINGS, EVEN <span class="darkred">THE WORLD</span>!</h1>
+    <p class="events-pre">Just look at my latest achievements...</p>
+    {% if events %}
+      <div class="events">
+      {% for event in events %}
+        <div class="event_header">
+          <div class="child date">{{event.timestamp}}</div>
+          <div class="child heading">{{event.title|upper}}</div>
+        </div>
+        <div class="event_body">
+        <img src={{event.image}} height="300">
+        <p class="description">{{event.description}}</p>
+        {% if event.special_mentions %}
+          <p class="description">
+            {% if event.special_mentions_message %}
+              {{event.special_mentions_message}}
+            {% else %}
+              Special thanks to
+            {% endif %}
+            {% for special_mention in event.special_mentions.all %}
+              <span class="hover_block">
+                <span class="special_mention">{{special_mention.name}}</span><span class="hover_img">
+                  <img src="{{special_mention.image}}" height="350"/>
+                </span>{% if not forloop.last %}, {% endif %}
+              </span>
+            {% endfor %}
+          </p>
+        {% endif %}
+        </div>
+        <hr>
+      {% endfor %}
+    </div>
+    {% else %}
+      <p class="events-pre">What do you mean there's none? This can't be right...</p>
+      <video controls>
+        <source src="{% static 'video/404.webm' %}" type="video/webm">
+        Even the video is not working, darn...
+      </video>
+    {% endif %}
+  </div>
+</body>
+</html>
+<script src="{% static 'js/index.js' %}"></script>

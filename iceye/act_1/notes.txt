@@ -1,0 +1,9 @@
+Scientists are baffled by the machine's infinite supply of coins!
+
+The idea is rather simple: we have an array of coins, we return a similar array that hold the number of coins to return instead of their denomination
+The coins array is sorted from largest to smallest to satisfy the requirement of returning the smallest number of coins possible
+Since the result is supposed to be used by the machine itself, I chose a list as return structure, small and simple. If readability matters, it could have been put into a namedtuple or dict could have been used instead - for the task at hand, additional overhead does not really matter, but it might be different with larger and more complex datasets.
+
+Sanity checks are there for basic input validation. Inserting less dosh than the coffee price will throw an error, since it's in the gray zone of operations: a "logical" result would be to simply return the user his money, but the machine is not allowed to return banknotes, inserting coins with value less than a coffee price would essentially turn the coffee machine into coin exchange machine, and if user inserted a banknote, he would essentially be converting it into coins...
+
+Function would probably not suit the more realistic scenario where the machine actually needs to track the number of the coins it still has, but hey, pure hypothetical task, right?

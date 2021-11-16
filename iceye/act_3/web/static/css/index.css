@@ -1,0 +1,86 @@
+h1 {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 64px;
+    text-align: center;
+}
+
+img {
+    border: 1px solid;
+
+}
+
+video {
+    display: block;
+    margin: auto;
+}
+
+.child {
+    display: inline-block;
+}
+
+.darkred {
+    color: darkred;
+}
+
+.date {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 24px;
+    padding-right: 20px;
+}
+
+.description {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 20px;
+}
+
+.heading {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 38px;
+}
+
+.event_header {
+    background: #A0E7E5;
+    border-bottom: 1px solid #000000;
+    cursor: pointer;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    transition: 1s;
+    width: 100%;
+}
+
+.event_header:hover, .active {
+    background: #1b9b79;
+}
+
+.event_body {
+    background: #c0f0ee;
+    display: none;
+    overflow: hidden;
+    padding-top: 8px;
+    width: 100%;
+}
+
+.hover_block {
+    position: relative;
+}
+
+.hover_img {
+    bottom: 0;
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.hover_block:hover .hover_img {
+    display: inline-block;
+}
+
+.events-pre {
+    font-family: "Roboto", "Arial";
+    font-size: 30px;
+    text-align: center;
+}
+
+.special_mention {
+    text-decoration: underline;
+}
